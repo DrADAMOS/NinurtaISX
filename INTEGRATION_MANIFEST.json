@@ -1,0 +1,128 @@
+{
+  "project": "ninurta_ocr_work",
+  "build_label": "2026-11-13 Sahmi tools + CSD discovery integration",
+  "source_archives": {
+    "Ninurta_FIXED15_CSD_HistoryCharts.zip": {
+      "bytes": 1208212,
+      "sha256": "1de24d064b2165295916ab7c77900bdcdc27dab1a4fabac3df04542deca46d24"
+    },
+    "Ninurta_FIXED15_CSD_Discovery_Fix.zip": {
+      "bytes": 1023664,
+      "sha256": "c907903c1486be166e612b52e195f46ee78bf1c27dfaad9bb3380a47d9256434"
+    }
+  },
+  "preserved_data": {
+    "stocks_json_sha256": "f200e4177cc4e658a91df1e381b864d42a0766112cf9de738ca8187701d45767",
+    "stocks_count": 105,
+    "official_csd_audit": {
+      "source": "Central Securities Depository of Iraq daily trading reports",
+      "retrievedAt": "2026-11-10T06:45:32+03:00",
+      "pdfCount": 72,
+      "reportsWithDates": 71,
+      "dateRange": [
+        "2026-06-22",
+        "2026-11-09"
+      ],
+      "tradingDates": [
+        "2026-06-22",
+        "2026-06-23",
+        "2026-06-24",
+        "2026-06-28",
+        "2026-06-29",
+        "2026-06-30",
+        "2026-07-01",
+        "2026-07-02",
+        "2026-07-05",
+        "2026-07-06",
+        "2026-07-07",
+        "2026-07-09",
+        "2026-07-12",
+        "2026-07-13",
+        "2026-07-14",
+        "2026-07-15",
+        "2026-07-16",
+        "2026-07-19",
+        "2026-07-20",
+        "2026-07-21",
+        "2026-07-22",
+        "2026-07-23",
+        "2026-07-27",
+        "2026-07-28",
+        "2026-07-29",
+        "2026-07-30",
+        "2026-08-05",
+        "2026-08-06",
+        "2026-08-09",
+        "2026-08-11",
+        "2026-08-13",
+        "2026-08-16",
+        "2026-08-17",
+        "2026-08-18",
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-23",
+        "2026-08-24",
+        "2026-08-26",
+        "2026-08-27",
+        "2026-08-30",
+        "2026-08-31",
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
+        "2026-09-06",
+        "2026-09-07",
+        "2026-10-04",
+        "2026-10-05",
+        "2026-10-06",
+        "2026-10-07",
+        "2026-10-08",
+        "2026-10-11",
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-04",
+        "2026-11-05",
+        "2026-11-08",
+        "2026-11-09"
+      ],
+      "records": 1922,
+      "uniqueSecurities": 48,
+      "uniqueDateSecurityPairs": 1922,
+      "duplicatePairs": 0,
+      "missingCompanyNamesAfterCrossReportFill": 0,
+      "ohlcIssues": 0,
+      "issues": [
+        {
+          "file": "10-8126_8_1_10_50_56.pdf",
+          "issue": "DATE_NOT_FOUND"
+        }
+      ],
+      "notes": [
+        "Regular Market Bulletin rows only. Second Platform, OTC, non-Iraqi and bond bulletins are excluded.",
+        "OHLC mapping follows the printed columns: opening, highest, lowest, closing.",
+        "No records were fabricated, interpolated, merged, or adjusted.",
+        "Company names missing in a PDF text line were filled only when the same security code had a company name in another downloaded bulletin."
+      ]
+    }
+  },
+  "added": [
+    "src/components/SahmiToolsView.tsx",
+    "src/utils/sahmiCalculators.ts",
+    "tests/sahmiCalculators.test.ts"
+  ],
+  "not_included": [
+    "node_modules",
+    "standalone Python app file"
+  ]
+}

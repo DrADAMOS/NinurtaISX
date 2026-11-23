@@ -1,0 +1,48 @@
+{
+  "name": "ninurta-isx-personal",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000 --host=127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts && python -m unittest discover -s tests/python -v",
+    "data:update": "python scripts/update-market-data-public.py",
+    "data:update:public": "python scripts/update-market-data-public.py",
+    "data:update:dry": "python scripts/update-market-data-public.py --dry-run",
+    "data:update:local": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-local-update.ps1",
+    "test:public-parser": "python -m unittest discover -s tests/python -v",
+    "data:directory:dry": "python scripts/update-market-data-public.py --directory-dry-run",
+    "data:directory:sync": "python scripts/update-market-data-public.py --sync-directory",
+    "data:audit-history": "python scripts/audit-historical-data.py",
+    "data:fetch-csd": "python scripts/fetch-csd-bulletins.py",
+    "data:import-official": "python scripts/import-official-history.py",
+    "data:fetch-reports": "python scripts/fetch-csd-bulletins.py --kind all --pages 20",
+    "data:fetch-monthly": "python scripts/fetch-csd-bulletins.py --kind monthly --archive exchange-news --pages 20",
+    "data:fetch-daily": "python scripts/fetch-csd-bulletins.py --kind daily --archive exchange-news --pages 20"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "lucide-react": "^0.546.0",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^8.3.0",
+    "motion": "^12.23.24",
+    "tesseract.js": "^6.0.1",
+    "pdfjs-dist": "^5.4.394",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2"
+  }
+}

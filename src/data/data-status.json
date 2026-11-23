@@ -1,0 +1,17 @@
+{
+  "status": "updated_quote_snapshot_only",
+  "provider": "IQWealth public market page (iraqsm.com)",
+  "providerUrl": "https://iraqsm.com/en/market",
+  "dataType": "public_end_of_session_quote_snapshot",
+  "marketSessionDate": "2026-11-23",
+  "retrievedAt": "2026-11-23T16:00:11+03:00",
+  "trackedStocks": 105,
+  "matchedSymbols": 105,
+  "listedCompanies": 105,
+  "companiesWithoutQuoteRow": 0,
+  "historyUpdated": false,
+  "technicalIndicatorsUpdated": false,
+  "recommendations": "remain_locked_until_full_OHLC_history_and_technical_recalculation_are_verified",
+  "note": "Only fields explicitly published in the public market table were refreshed. Rows marked no_trade or suspended may carry the last traded price. OHLC history, previousClose, open/high/low, fundamentals, and technical levels were not fabricated or changed.",
+  "backupFile": "backups/stocks-before-public-update-20261123-160011.json"
+}

@@ -1,0 +1,38 @@
+import React from 'react';
+import { Target, BarChart3, Briefcase, Calculator, Landmark, Zap, BookOpenCheck, FileSpreadsheet, BrainCircuit, Activity, Calculator as ToolsCalculator } from 'lucide-react';
+
+interface NavigationProps {
+  activeView: string;
+  onNavigate: (view: string) => void;
+  recommendationsCount: { buy: number; speculate: number; wait: number; sell: number };
+}
+
+export const Navigation: React.FC<NavigationProps> = ({ activeView, onNavigate, recommendationsCount }) => {
+  const navItems = [
+    { id: 'recommendations', label: 'إشارات حركة السوق', sublabel: 'ارتفاع وانخفاض الأسهم', icon: Target, badge: recommendationsCount.buy },
+    { id: 'directory', label: 'دليل الأسهم', sublabel: 'الشركات والبيانات الفنية', icon: BarChart3 },
+    { id: 'portfolio', label: 'محفظة المستثمر', sublabel: 'المراكز والأرباح', icon: Briefcase },
+    { id: 'calculator', label: 'حاسبة العمولة', sublabel: 'عمولات ونقطة التعادل', icon: Calculator },
+    { id: 'banks', label: 'تحليل المصارف', sublabel: 'الجودة والمخاطر', icon: Landmark },
+    { id: 'investorIntelligence', label: 'ذكاء المستثمر', sublabel: 'قراءة المحفظة والفرص', icon: BrainCircuit },
+    { id: 'marketIntelligence', label: 'ذكاء السوق', sublabel: 'حركة السوق والقطاعات', icon: Activity },
+    { id: 'investorHub', label: 'نصائح وأدوات المستثمر', sublabel: 'التقييم والمخاطر', icon: BookOpenCheck },
+    { id: 'sahmiTools', label: 'حاسبات سهمي', sublabel: '11 حاسبة مالية', icon: ToolsCalculator },
+    { id: 'movers', label: 'نبض السوق والحركة', sublabel: 'السيولة والصعود والهبوط', icon: Zap },
+    { id: 'accountStatement', label: 'كشف الحساب', sublabel: 'استيراد الحركات المصرفية', icon: FileSpreadsheet },
+  ];
+
+  return <nav aria-label="أدوات نينورتا" className="bg-[#080D1A] border-b border-slate-800/80 px-3 py-3">
+    <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2">
+      {navItems.map(item => {
+        const Icon = item.icon;
+        const active = activeView === item.id;
+        return <button key={item.id} type="button" aria-current={active ? 'page' : undefined} onClick={() => onNavigate(item.id)} className={`min-w-0 flex items-center gap-2 rounded-xl border p-2.5 text-right transition-colors ${active ? 'border-amber-500/50 bg-amber-500/10' : 'border-slate-800 bg-slate-900/40 hover:bg-slate-800/70'}`}>
+          <span className={`shrink-0 rounded-lg p-2 ${active ? 'bg-amber-400/20 text-amber-300' : 'bg-slate-800 text-slate-400'}`}><Icon className="h-4 w-4"/></span>
+          <span className="min-w-0"><span className={`block truncate text-[11px] font-bold ${active ? 'text-amber-200' : 'text-slate-200'}`}>{item.label}</span><span className="block truncate text-[10px] text-slate-500">{item.sublabel}</span></span>
+          {item.badge !== undefined && <span className="mr-auto shrink-0 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-1.5 py-0.5 text-[9px] text-emerald-300">{item.badge}</span>}
+        </button>;
+      })}
+    </div>
+  </nav>;
+};

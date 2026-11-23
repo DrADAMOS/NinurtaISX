@@ -1,0 +1,189 @@
+export const BANK_METRIC_KEYS = [
+  "npl", "nplCoverage", "roe", "roa", "car",
+  "liquidAssetsToDeposits", "pe", "pb",
+  "profitGrowthYoY", "equityGrowthYoY",
+  "dividendYield", "dividendYears",
+] as const;
+
+export type BankMetricKey = typeof BANK_METRIC_KEYS[number];
+export type MetricMethod = "reported" | "calculated";
+
+export interface BankMetricEvidence {
+  value: number;
+  asOf: string; // YYYY-MM-DD
+  sourceName: string;
+  sourceUrl: string; // HTTPS only
+  method?: MetricMethod;
+  formula?: string;
+  notes?: string;
+}
+
+export interface BankSnapshot {
+  symbol: string;
+  reportPeriod: string;
+  reportDate: string; // YYYY-MM-DD
+  audited: boolean;
+  metrics: Partial<Record<BankMetricKey, BankMetricEvidence>>;
+}
+
+export type DataIssue =
+  | "INVALID_SYMBOL"
+  | "INVALID_REPORT_PERIOD"
+  | "INVALID_REPORT_DATE"
+  | "AUDIT_NOT_CONFIRMED"
+  | "UNKNOWN_METRIC"
+  | "INVALID_METRIC_VALUE"
+  | "INVALID_METRIC_DATE"
+  | "METRIC_AFTER_REPORT_DATE"
+  | "MISSING_SOURCE_NAME"
+  | "NON_HTTPS_SOURCE"
+  | "MISSING_CALCULATION_FORMULA";
+
+export interface SnapshotValidation {
+  valid: boolean;
+  issues: DataIssue[];
+  validMetricCount: number;
+  presentMetricCount: number;
+}
+
+export interface FundamentalReadiness {
+  status: "ready_for_scoring" | "incomplete" | "invalid";
+  fundamentalScore: null;
+  coveragePercent: number;
+  coreMissing: BankMetricKey[];
+  issues: DataIssue[];
+  explanation: string;
+}
+
+const CORE_METRICS: readonly BankMetricKey[] = [
+  "car", "npl", "nplCoverage", "roe", "roa", "liquidAssetsToDeposits",
+];
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+function validDate(value: string): boolean {
+  if (!ISO_DATE.test(value)) return false;
+  const d = new Date(`${value}T00:00:00.000Z`);
+  return Number.isFinite(d.getTime()) && d.toISOString().slice(0, 10) === value;
+}
+
+export function validateBankSnapshot(input: unknown): SnapshotValidation {
+  const issues: DataIssue[] = [];
+  const s = input as Partial<BankSnapshot> | null;
+  if (!s || typeof s !== "object" || typeof s.symbol !== "string" ||
+      !/^[A-Z0-9]{2,12}$/.test(s.symbol)) issues.push("INVALID_SYMBOL");
+  if (!s || typeof s.reportPeriod !== "string" || !/^FY\d{4}$/.test(s.reportPeriod))
+    issues.push("INVALID_REPORT_PERIOD");
+  if (!s || typeof s.reportDate !== "string" || !validDate(s.reportDate))
+    issues.push("INVALID_REPORT_DATE");
+  if (s?.audited !== true) issues.push("AUDIT_NOT_CONFIRMED");
+
+  const metrics = (s?.metrics ?? {}) as Record<string, unknown>;
+  let validMetricCount = 0;
+  const presentMetricCount = Object.keys(metrics).length;
+
+  for (const [key, raw] of Object.entries(metrics)) {
+    if (!(BANK_METRIC_KEYS as readonly string[]).includes(key)) {
+      issues.push("UNKNOWN_METRIC");
+      continue;
+    }
+    const m = raw as Partial<BankMetricEvidence> | null;
+    if (!m || typeof m.value !== "number" || !Number.isFinite(m.value)) {
+      issues.push("INVALID_METRIC_VALUE"); continue;
+    }
+    if (typeof m.asOf !== "string" || !validDate(m.asOf)) {
+      issues.push("INVALID_METRIC_DATE"); continue;
+    }
+    if (typeof s?.reportDate === "string" && validDate(s.reportDate) && m.asOf > s.reportDate)
+      issues.push("METRIC_AFTER_REPORT_DATE");
+    if (typeof m.sourceName !== "string" || !m.sourceName.trim())
+      issues.push("MISSING_SOURCE_NAME");
+    if (typeof m.sourceUrl !== "string" || !m.sourceUrl.startsWith("https://"))
+      issues.push("NON_HTTPS_SOURCE");
+    if (m.method === "calculated" && (!m.formula || !m.formula.trim()))
+      issues.push("MISSING_CALCULATION_FORMULA");
+
+    const metricHasErrors =
+      typeof m.value !== "number" || !Number.isFinite(m.value) ||
+      typeof m.asOf !== "string" || !validDate(m.asOf) ||
+      (typeof s?.reportDate === "string" && validDate(s.reportDate) && m.asOf > s.reportDate) ||
+      typeof m.sourceName !== "string" || !m.sourceName.trim() ||
+      typeof m.sourceUrl !== "string" || !m.sourceUrl.startsWith("https://") ||
+      (m.method === "calculated" && (!m.formula || !m.formula.trim()));
+    if (!metricHasErrors) validMetricCount++;
+  }
+
+  return { valid: issues.length === 0, issues: [...new Set(issues)], validMetricCount, presentMetricCount };
+}
+
+/**
+ * This gate deliberately does NOT calculate a bank score.
+ * A separate, reviewed scoring methodology must be approved before ranking.
+ */
+export function assessFundamentalReadiness(snapshot: BankSnapshot): FundamentalReadiness {
+  const validation = validateBankSnapshot(snapshot);
+  const metrics = snapshot.metrics ?? {};
+  const coreMissing = CORE_METRICS.filter((key) => !metrics[key]);
+  const coveragePercent = Math.round(
+    (validation.validMetricCount / BANK_METRIC_KEYS.length) * 100
+  );
+
+  if (!validation.valid) {
+    return {
+      status: "invalid", fundamentalScore: null, coveragePercent, coreMissing,
+      issues: validation.issues,
+      explanation: "تم حجب التقييم بسبب أخطاء التوثيق أو صلاحية البيانات.",
+    };
+  }
+
+  if (coreMissing.length > 0 || coveragePercent < 80) {
+    return {
+      status: "incomplete", fundamentalScore: null, coveragePercent, coreMissing,
+      issues: [],
+      explanation: "البيانات لا تحقق متطلبات التقييم الأساسي؛ لا يتم إنشاء ترتيب أو درجة.",
+    };
+  }
+
+  return {
+    status: "ready_for_scoring", fundamentalScore: null, coveragePercent, coreMissing: [],
+    issues: [],
+    explanation: "اكتملت بوابة جودة البيانات. الدرجة لا تزال محجوبة إلى حين اعتماد نموذج تقييم مُراجع.",
+  };
+}
+
+export type TechnicalStatus = "verified" | "stale" | "unverified" | "quarantined";
+
+export interface AnalysisAvailability {
+  fundamental: FundamentalReadiness;
+  technicalStatus: TechnicalStatus;
+  technicalRecommendationAllowed: boolean;
+  fundamentalAnalysisAvailable: boolean;
+}
+
+export function combineAnalysisAvailability(
+  fundamental: FundamentalReadiness,
+  technicalStatus: TechnicalStatus,
+): AnalysisAvailability {
+  return {
+    fundamental,
+    technicalStatus,
+    technicalRecommendationAllowed: technicalStatus === "verified",
+    // Technical feed failures must never hide an otherwise valid fundamental review.
+    fundamentalAnalysisAvailable: fundamental.status !== "invalid",
+  };
+}
+
+/** Explicit replacement only: never silently overwrite a same-period bank filing. */
+export function upsertSnapshot(
+  snapshots: BankSnapshot[],
+  incoming: BankSnapshot,
+  replaceExisting = false,
+): BankSnapshot[] {
+  const key = (s: BankSnapshot) => `${s.symbol}|${s.reportPeriod}|${s.reportDate}`;
+  const index = snapshots.findIndex((s) => key(s) === key(incoming));
+  if (index < 0) return [...snapshots, incoming];
+  if (!replaceExisting) {
+    throw new Error(`DUPLICATE_SNAPSHOT_REQUIRES_EXPLICIT_REPLACE:${key(incoming)}`);
+  }
+  return snapshots.map((s, i) => i === index ? incoming : s);
+}

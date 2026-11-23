@@ -1,0 +1,69 @@
+{
+  "readOnly": true,
+  "sourceFiles": [
+    "src/data/stocks.json",
+    "src/data/legacy-stocks.json"
+  ],
+  "sourceProvenance": "No historical-source provenance is inferred from current quote metadata.",
+  "summaries": {
+    "current": {
+      "securities": 105,
+      "history_rows": 988,
+      "securities_with_history": 27,
+      "duplicate_date_securities": 27,
+      "duplicate_date_events": 27,
+      "incomplete_rows": 16,
+      "invalid_rows": 0
+    },
+    "legacy": {
+      "securities": 96,
+      "history_rows": 3483,
+      "securities_with_history": 96,
+      "duplicate_date_securities": 96,
+      "duplicate_date_events": 96,
+      "incomplete_rows": 27,
+      "invalid_rows": 3
+    }
+  },
+  "crossFileComparison": {
+    "currentLegacySymbolOverlap": 51,
+    "legacySymbolsNotInCurrentDirectory": 45,
+    "currentSymbolsWithHistory": 27,
+    "currentHistoryArraysIdenticalToLegacy": 27,
+    "identicalHistorySymbols": [
+      "AISP",
+      "BASH",
+      "BBAY",
+      "BBOB",
+      "BCOI",
+      "BEFI",
+      "BGUC",
+      "BIBI",
+      "BINT",
+      "BKUI",
+      "BMNS",
+      "BNAI",
+      "BNOI",
+      "BNOR",
+      "BROI",
+      "BUND",
+      "HBAG",
+      "HPAL",
+      "HSAD",
+      "HTVM",
+      "IBSD",
+      "IHLI",
+      "IICM",
+      "INCP",
+      "SMRI",
+      "TASC",
+      "TZNI"
+    ]
+  },
+  "policy": [
+    "No duplicate rows were deleted or merged.",
+    "No incomplete or invalid OHLCV values were repaired.",
+    "No legacy signals or technical indicators were imported or recalculated.",
+    "A historical record is not approved for chart/indicator use without its own verified source, URL, and retrieval timestamp."
+  ]
+}

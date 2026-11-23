@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { reconcilePortfolio } from '../src/utils/portfolioReconciliation';
+import type { RabeeTrade } from '../src/utils/rabeeStatement';
+import type { PortfolioPosition } from '../src/types/stock';
+const trade=(overrides:Partial<RabeeTrade>={}):RabeeTrade=>({contractNo:'C1',date:'2025-01-01',ticker:'BNOI',company:'Bank',side:'BUY',quantity:100,price:2,grossValue:200,commission:2,netValue:202,confidence:'high',sourceLine:'',...overrides});
+const position=(overrides:Partial<PortfolioPosition>={}):PortfolioPosition=>({id:'p1',symbol:'BNOI',shares:100,averageBuyPrice:2,buyDate:'2025-01-01',...overrides});
+test('matches broker net quantity with portfolio position',()=>{const r=reconcilePortfolio([position()],[trade()]);assert.equal(r.rows[0].status,'matched');assert.equal(r.rows[0].brokerShares,100);});
+test('detects quantity mismatch without changing positions',()=>{const p=position({shares:90});const r=reconcilePortfolio([p],[trade()]);assert.equal(r.rows[0].status,'quantity_mismatch');assert.equal(p.shares,90);assert.equal(r.rows[0].difference,-10);});
+test('flags overselling beyond accumulated broker buys',()=>{const r=reconcilePortfolio([],[trade(),trade({contractNo:'C2',side:'SELL',quantity:120,price:2,grossValue:240,commission:2.4,netValue:237.6,date:'2025-01-02'})]);assert.equal(r.rows[0].status,'oversold');});
+test('excludes duplicate contract numbers from quantity calculation',()=>{const r=reconcilePortfolio([],[trade(),trade()]);assert.deepEqual(r.duplicateContracts,['C1']);assert.equal(r.rows[0].brokerShares,0);});
+test('quarantines incomplete and review trades',()=>{const r=reconcilePortfolio([],[trade({side:'REVIEW',confidence:'review'})]);assert.equal(r.reviewContracts.length,1);assert.equal(r.rows.length,0);});
+test('calculates gross totals and commissions independently',()=>{const r=reconcilePortfolio([],[trade(),trade({contractNo:'C2',side:'SELL',quantity:10,grossValue:20,commission:0.2,netValue:19.8})]);assert.equal(r.totalBuyGross,200);assert.equal(r.totalSellGross,20);assert.equal(r.totalCommission,2.2);});

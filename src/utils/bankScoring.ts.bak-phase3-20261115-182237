@@ -1,0 +1,140 @@
+export type BankMetricKey =
+  | 'npl' | 'nplCoverage' | 'roe' | 'roa' | 'car' | 'liquidAssetsToDeposits'
+  | 'pe' | 'pb' | 'profitGrowthYoY' | 'equityGrowthYoY' | 'dividendYield' | 'dividendYears';
+
+export interface SourcedMetric {
+  value: number;
+  asOf: string;
+  sourceName: string;
+  sourceUrl: string;
+}
+
+export interface BankFinancialSnapshot {
+  symbol: string;
+  reportPeriod: string;
+  reportDate: string;
+  audited: boolean;
+  metrics: Partial<Record<BankMetricKey, SourcedMetric>>;
+}
+
+export interface BankGroupScore {
+  key: string;
+  label: string;
+  weight: number;
+  score: number | null;
+  available: number;
+  required: number;
+}
+
+export interface BankAssessment {
+  symbol: string;
+  fundamentalScore: number | null;
+  riskScore: number | null;
+  confidence: number;
+  coverage: number;
+  eligible: boolean;
+  reason: string;
+  groups: BankGroupScore[];
+}
+
+const GROUPS: Array<{key:string;label:string;weight:number;fields:BankMetricKey[]}> = [
+  {key:'assetQuality',label:'جودة الأصول والقروض',weight:25,fields:['npl','nplCoverage']},
+  {key:'profitability',label:'الربحية والكفاءة',weight:20,fields:['roe','roa']},
+  {key:'capitalLiquidity',label:'رأس المال والسيولة',weight:20,fields:['car','liquidAssetsToDeposits']},
+  {key:'valuation',label:'التقييم والسعر',weight:15,fields:['pe','pb']},
+  {key:'growth',label:'النمو والاستدامة',weight:10,fields:['profitGrowthYoY','equityGrowthYoY']},
+  {key:'dividends',label:'التوزيعات النقدية',weight:5,fields:['dividendYield','dividendYears']},
+  {key:'disclosure',label:'الإفصاح والتدقيق',weight:5,fields:[]},
+];
+
+function validIsoDate(value: unknown): value is string {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const parsed = new Date(`${value}T00:00:00.000Z`);
+  return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0,10) === value;
+}
+function validMetric(m: SourcedMetric | undefined, reportDate: string): m is SourcedMetric {
+  if (!m || !Number.isFinite(m.value) || !validIsoDate(m.asOf) || !validIsoDate(reportDate) ||
+      m.asOf > reportDate || !m.sourceName?.trim() || !/^https:\/\//i.test(m.sourceUrl || '')) return false;
+  // Future-dated observations are rejected; they must never increase confidence.
+  return Date.parse(`${m.asOf}T00:00:00.000Z`) <= Date.now() + 24*60*60*1000;
+}
+function clamp(n:number){ return Math.max(0,Math.min(100,n)); }
+function linear(value:number, zero:number, full:number){
+  if (full === zero) return value >= full ? 100 : 0;
+  return clamp((value-zero)/(full-zero)*100);
+}
+function metricScore(key:BankMetricKey, v:number):number|null {
+  switch(key){
+    case 'npl': return linear(v, 15, 1); // lower is better
+    case 'nplCoverage': return linear(v, 30, 120);
+    case 'roe': return linear(v, 0, 20);
+    case 'roa': return linear(v, 0, 2);
+    // CBI minimum CAR referenced at 12.5%; score reaches full at 30%.
+    case 'car': return linear(v, 12.5, 30);
+    case 'liquidAssetsToDeposits': return linear(v, 10, 40);
+    // Valuation scores are capped: low multiples are not proof of quality.
+    case 'pe': return v <= 0 ? null : v <= 6 ? 100 : v >= 20 ? 0 : linear(20-v, 0, 14);
+    case 'pb': return v <= 0 ? null : v <= 1 ? 100 : v >= 3 ? 0 : linear(3-v, 0, 2);
+    case 'profitGrowthYoY': return linear(v, -20, 20);
+    case 'equityGrowthYoY': return linear(v, -20, 20);
+    case 'dividendYield': return linear(v, 0, 10);
+    case 'dividendYears': return linear(v, 0, 5);
+  }
+}
+
+export function calculateBankAssessment(snapshot:BankFinancialSnapshot):BankAssessment {
+  const valid = new Map<BankMetricKey,SourcedMetric>();
+  (Object.keys(snapshot.metrics) as BankMetricKey[]).forEach(k=>{
+    const m=snapshot.metrics[k]; if(validMetric(m, snapshot.reportDate)) valid.set(k,m);
+  });
+  const groups:BankGroupScore[] = GROUPS.map(g=>{
+    if(g.key==='disclosure'){
+      const reportDateOk = validIsoDate(snapshot.reportDate) &&
+        Date.parse(`${snapshot.reportDate}T00:00:00.000Z`) <= Date.now() + 24*60*60*1000;
+      const hasDisclosure = !!snapshot.audited && reportDateOk &&
+        g.weight > 0 && [...valid.values()].some(m=>m.sourceUrl);
+      return {key:g.key,label:g.label,weight:g.weight,score:hasDisclosure?100:null,available:hasDisclosure?1:0,required:1};
+    }
+    const scored = g.fields.map(k=>{
+      const m=valid.get(k); return m ? metricScore(k,m.value) : null;
+    }).filter((x):x is number=>x!==null);
+    return {key:g.key,label:g.label,weight:g.weight,score:scored.length?scored.reduce((a,b)=>a+b,0)/scored.length:null,available:scored.length,required:g.fields.length};
+  });
+  const requiredWeight = GROUPS.reduce((s,g)=>s+g.weight,0);
+  const availableWeight = GROUPS.reduce((s,g)=>{
+    const row=groups.find(x=>x.key===g.key)!;
+    return s + g.weight*(g.key==='disclosure' ? row.available : row.available/g.fields.length);
+  },0);
+  const coverage = requiredWeight ? Math.round(availableWeight/requiredWeight*100) : 0;
+  const critical = ['assetQuality','profitability','capitalLiquidity','valuation'];
+  const criticalReady = critical.every(k=>groups.find(g=>g.key===k)?.score!==null);
+  const weighted = groups.reduce((s,g)=>s+(g.score===null?0:g.score*g.weight),0);
+  const provisionalScore = coverage>=80 && criticalReady && availableWeight>0 ? Math.round(weighted/availableWeight) : null;
+  const asset = groups.find(g=>g.key==='assetQuality')?.score;
+  const capital = groups.find(g=>g.key==='capitalLiquidity')?.score;
+  const profitability = groups.find(g=>g.key==='profitability')?.score;
+  const provisionalRiskScore = typeof asset === 'number' && typeof capital === 'number' && typeof profitability === 'number'
+    ? Math.round(100-(asset*0.45+capital*0.35+profitability*0.20)) : null;
+  const freshnessFactors = [...valid.values()].map(m=>{
+    const ageDays=(Date.now()-Date.parse(`${m.asOf}T00:00:00.000Z`))/(1000*60*60*24);
+    return ageDays<=548 ? 1 : ageDays<=730 ? 0.8 : 0.6;
+  });
+  // Assess freshness across every accepted metric; one new figure cannot mask stale data elsewhere.
+  const freshnessFactor = freshnessFactors.length ? freshnessFactors.reduce((a,b)=>a+b,0)/freshnessFactors.length : 0;
+  const confidence = Math.round(coverage * (snapshot.audited ? 1 : 0.85) * freshnessFactor);
+  const reportPeriodOk = /^(FY\d{4}|Q[1-4]-\d{4})$/.test(snapshot.reportPeriod);
+  const reportDateOk = validIsoDate(snapshot.reportDate) &&
+    Date.parse(`${snapshot.reportDate}T00:00:00.000Z`) <= Date.now() + 86400000;
+  const eligible = provisionalScore!==null && snapshot.audited && confidence>=80 && reportPeriodOk && reportDateOk;
+  // Never display a provisional score as an assessed result.
+  const fundamentalScore = eligible ? provisionalScore : null;
+  const riskScore = eligible ? provisionalRiskScore : null;
+  const reason = eligible ? 'اجتاز الحد الأدنى من اكتمال البيانات والتوثيق' :
+    !snapshot.audited ? 'القوائم المدخلة غير موصوفة بأنها مدققة' :
+    (!reportPeriodOk || !reportDateOk) ? 'فترة التقرير أو تاريخه غير صالح' :
+    !criticalReady ? 'بيانات أساسية ناقصة: جودة الأصول أو الربحية أو رأس المال أو التقييم' :
+    `اكتمال البيانات ${coverage}%؛ يلزم 80% على الأقل مع مصادر موثقة`;
+  return {symbol:snapshot.symbol,fundamentalScore,riskScore,confidence,coverage,eligible,reason,groups};
+}
+
+export const BANK_SCORE_WEIGHTS = GROUPS.map(({key,label,weight})=>({key,label,weight}));

@@ -1,0 +1,879 @@
+{
+  "generatedAt": "2026-11-14T10:12:43.977Z",
+  "stocks": [
+    {
+      "symbol": "BMAL",
+      "nameAr": "مصرف المال الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BLAD",
+      "nameAr": "مصرف العطاء الاسلامي للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BAAI",
+      "nameAr": "مصرف العربية الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BQUR",
+      "nameAr": "مصرف القرطاس الاسلامي للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BTIB",
+      "nameAr": "مصرف الطيف الاسلامي للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 32,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BQAB",
+      "nameAr": "مصرف القابض الاسلامي للتمويل والاستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BANS",
+      "nameAr": "مصرف الانصاري الاسلامي للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BJAB",
+      "nameAr": "مصرف الجنوب الاسلامي للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BMNS",
+      "nameAr": "مصرف المنصور للاستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 71,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BAMS",
+      "nameAr": "مصرف المشرق العربي الاسلامي للاستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BMUI",
+      "nameAr": "مصرف المستشار الاسلامي للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BAME",
+      "nameAr": "مصرف امين العراق للاستثمار والتمويل الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BASH",
+      "nameAr": "مصرف اشور الدولي للأستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 61,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CURRENT_PRICE_OUTSIDE_SESSION_RANGE;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BAIB",
+      "nameAr": "مصرف اسيا العراق الاسلامي للأستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BBAY",
+      "nameAr": "مصرف بابل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BBOB",
+      "nameAr": "مصرف بغداد",
+      "status": "review_required",
+      "officialHistoryRows": 71,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BCIH",
+      "nameAr": "مصرف جيهان للأستثمار والتمويل الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BCOI",
+      "nameAr": "المصرف التجاري العراقي الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 60,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BROI",
+      "nameAr": "مصرف الائتمان العراقي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;INCOMPLETE_OHLCV_ROWS:1;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BEFI",
+      "nameAr": "مصرف الاقتصاد للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 63,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BELF",
+      "nameAr": "مصرف ايلاف الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 30,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BERI",
+      "nameAr": "مصرف اربيل للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BGUC",
+      "nameAr": "مصرف الخليج التجاري",
+      "status": "review_required",
+      "officialHistoryRows": 63,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BIDB",
+      "nameAr": "مصرف التنمية الدولي للأستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BINT",
+      "nameAr": "المصرف الدولي الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;INCOMPLETE_OHLCV_ROWS:1;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CURRENT_PRICE_OUTSIDE_SESSION_RANGE;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BIBI",
+      "nameAr": "مصرف الاستثمار العراقي",
+      "status": "review_required",
+      "officialHistoryRows": 67,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BINI",
+      "nameAr": "مصرف نور العراق الاسلامي للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BIIB",
+      "nameAr": "المصرف العراقي الاسلامي للأستثمار والتنمية",
+      "status": "review_required",
+      "officialHistoryRows": 65,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BIME",
+      "nameAr": "مصرف الشرق الاوسط العراقي للأستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 61,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BKUI",
+      "nameAr": "مصرف كوردستان الدولي الاسلامي للأستثمار والتنمية",
+      "status": "review_required",
+      "officialHistoryRows": 23,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CURRENT_PRICE_OUTSIDE_SESSION_RANGE;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BMFI",
+      "nameAr": "مصرف الموصل للتنمية والاستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 28,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BNOI",
+      "nameAr": "المصرف الاهلي العراقي",
+      "status": "review_required",
+      "officialHistoryRows": 71,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BNAI",
+      "nameAr": "المصرف الوطني الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 7,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BNOR",
+      "nameAr": "مصرف الشمال للتمويل والاستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BRAJ",
+      "nameAr": "مصرف الراجح الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BRTB",
+      "nameAr": "مصرف الاقليم التجاري",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BSUC",
+      "nameAr": "مصرف سومر التجاري",
+      "status": "review_required",
+      "officialHistoryRows": 32,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BTRI",
+      "nameAr": "مصرف عبر العراق للاستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BTRU",
+      "nameAr": "مصرف الثقة الدولي الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BUOI",
+      "nameAr": "مصرف الاتحاد العراقي",
+      "status": "review_required",
+      "officialHistoryRows": 23,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BUND",
+      "nameAr": "المصرف المتحد للاستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 50,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "BWOR",
+      "nameAr": "مصرف العالم الاسلامي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BZII",
+      "nameAr": "مصرف زين العراق الاسلامي للاستثمار والتمويل",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IHLI",
+      "nameAr": "الهلال الصناعية",
+      "status": "review_required",
+      "officialHistoryRows": 9,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CURRENT_PRICE_OUTSIDE_SESSION_RANGE;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "IKHC",
+      "nameAr": "طريق الخازر لانتاج وتجارة المواد الانشائية والاستثمارات العقارية والمقاولات العامة",
+      "status": "review_required",
+      "officialHistoryRows": 1,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IKLV",
+      "nameAr": "الكندي لانتاج اللقاحات والادوية البيطرية",
+      "status": "review_required",
+      "officialHistoryRows": 45,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IMAP",
+      "nameAr": "المنصور للصناعات الدوائية والمستلزمات الطبية ومواد التجميل والمياه المعقمة",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IBPM",
+      "nameAr": "بغداد لصناعة مواد التغليف",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IBSD",
+      "nameAr": "بغداد للمشروبات الغازية",
+      "status": "review_required",
+      "officialHistoryRows": 65,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "IELI",
+      "nameAr": "الصناعات الالكترونية",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IFCM",
+      "nameAr": "الفلوجة لانتاج المواد الانشائية والاستثمارات العقارية",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IHFI",
+      "nameAr": "الوطنية لصناعات الاثاث المنزلي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IICM",
+      "nameAr": "العراقية لصناعة وتجارة الكارتون ومستلزماتها",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CURRENT_PRICE_OUTSIDE_SESSION_RANGE;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "IIDP",
+      "nameAr": "العراقية لتصنيع وتسويق التمور",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IIEW",
+      "nameAr": "العراقية للاعمال الهندسية",
+      "status": "review_required",
+      "officialHistoryRows": 12,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IITC",
+      "nameAr": "العراقية للسجاد والمفروشات",
+      "status": "review_required",
+      "officialHistoryRows": 51,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IMIB",
+      "nameAr": "الوطنية للصناعات المعدنية والدراجات",
+      "status": "review_required",
+      "officialHistoryRows": 12,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IMCI",
+      "nameAr": "الصناعات الكيمياوية العصرية",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IMCM",
+      "nameAr": "صناعة المواد الانشائية الحديثة",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "IMOS",
+      "nameAr": "الخياطة الحديثة",
+      "status": "review_required",
+      "officialHistoryRows": 61,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "INCP",
+      "nameAr": "الوطنية للصناعات الكيمياوية والبلاستيكية",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CURRENT_PRICE_OUTSIDE_SESSION_RANGE;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "IRMC",
+      "nameAr": "انتاج الالبسة الجاهزة والتجارة العامة",
+      "status": "review_required",
+      "officialHistoryRows": 33,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "ITLI",
+      "nameAr": "الصناعات الخفيفة",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SAEI",
+      "nameAr": "الامين للاستثمارات العقارية",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SBAG",
+      "nameAr": "البادية للنقل العام",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SMRI",
+      "nameAr": "المعمورة للاستثمارات العقارية",
+      "status": "review_required",
+      "officialHistoryRows": 64,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "SNUC",
+      "nameAr": "النخبة للمقاولات العامة والاستثمارات العقارية",
+      "status": "review_required",
+      "officialHistoryRows": 20,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "OMWJ",
+      "nameAr": "امواج الدولية للاستثمارات العقارية القابضة",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SBPT",
+      "nameAr": "بغداد العراق للنقل العام والاستثمارات العقارية",
+      "status": "review_required",
+      "officialHistoryRows": 69,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "BDSI",
+      "nameAr": "مصرف دار السلام للاستثمار",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SIBD",
+      "nameAr": "ابداع الشرق الاوسط للمقاولات العامة والاستثمارات العقارية",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SIGT",
+      "nameAr": "العراقية لنقل المنتجات النفطية والبضائع",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SILT",
+      "nameAr": "العراقية للنقل البري",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SKTA",
+      "nameAr": "مدينة العاب الكرخ السياحية",
+      "status": "review_required",
+      "officialHistoryRows": 45,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "SMOF",
+      "nameAr": "الموصل لمدن الالعاب والاستثمارات السياحية",
+      "status": "review_required",
+      "officialHistoryRows": 17,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "HMAN",
+      "nameAr": "فنادق المنصور",
+      "status": "review_required",
+      "officialHistoryRows": 47,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "HSAD",
+      "nameAr": "فندق السدير",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "HASH",
+      "nameAr": "فندق اشورالسياحي / مساهمة مختلطة",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "HBAY",
+      "nameAr": "فندق بابل",
+      "status": "review_required",
+      "officialHistoryRows": 20,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "HBAG",
+      "nameAr": "فندق بغداد",
+      "status": "review_required",
+      "officialHistoryRows": 58,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CURRENT_PRICE_OUTSIDE_SESSION_RANGE;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "HISH",
+      "nameAr": "فنادق عشتار",
+      "status": "review_required",
+      "officialHistoryRows": 28,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "HNTI",
+      "nameAr": "الوطنية للأستثمارات السياحية والمشاريع العقارية",
+      "status": "review_required",
+      "officialHistoryRows": 12,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "HPAL",
+      "nameAr": "فندق فلسطين",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;INCOMPLETE_OHLCV_ROWS:1;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "HKAR",
+      "nameAr": "رحاب كربلاء للأستثمار والمقاولات العامة ( فنادق كربلاء سابقاً)",
+      "status": "review_required",
+      "officialHistoryRows": 27,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "HTVM",
+      "nameAr": "المدينة السياحية في سد الموصل",
+      "status": "review_required",
+      "officialHistoryRows": 39,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "AAHP",
+      "nameAr": "الاهلية للانتاج الزراعي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "ABAP",
+      "nameAr": "بابل للانتاج الحيواني والنباتي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "AIRP",
+      "nameAr": "العراقية لانتاج وتسويق المنتجات الزراعية",
+      "status": "review_required",
+      "officialHistoryRows": 15,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "AISP",
+      "nameAr": "العراقية لانتاج البذور",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;HISTORICAL_SOURCE_NOT_VERIFIED;DUPLICATE_DATES:2026-09-30;INCOMPLETE_OHLCV_ROWS:1;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "AMEF",
+      "nameAr": "الشرق الاوسط لانتاج وتسويق الاسماك",
+      "status": "review_required",
+      "officialHistoryRows": 6,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "AMAP",
+      "nameAr": "الحديثة للانتاج الحيواني والزراعي",
+      "status": "review_required",
+      "officialHistoryRows": 21,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "AIPM",
+      "nameAr": "الشركة العراقية لانتاج وتسويق اللحوم والمحاصيل الحقلية والاستثمارات",
+      "status": "review_required",
+      "officialHistoryRows": 30,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "VBAT",
+      "nameAr": "الباتك للاستثمارات المالية",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "VAMF",
+      "nameAr": "الامين للاستثمار المالي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "VKHF",
+      "nameAr": "الخير للاستثمار المالي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "VWIF",
+      "nameAr": "الوئام للاستثمار المالي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "VZAF",
+      "nameAr": "الزوراء للاستثمار المالي",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "VMES",
+      "nameAr": "بين النهرين للاستثمارات المالية",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "NAHF",
+      "nameAr": "الاهلية للتأمين",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "NAME",
+      "nameAr": "الامين للتأمين",
+      "status": "review_required",
+      "officialHistoryRows": 53,
+      "verifiedCurrentSessionBar": true,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "NHAM",
+      "nameAr": "الحمراء للتأمين",
+      "status": "review_required",
+      "officialHistoryRows": 0,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "NDSA",
+      "nameAr": "دار السلام للتأمين",
+      "status": "review_required",
+      "officialHistoryRows": 23,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "NGIR",
+      "nameAr": "الخليج للتأمين",
+      "status": "review_required",
+      "officialHistoryRows": 27,
+      "verifiedCurrentSessionBar": false,
+      "issues": "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION"
+    },
+    {
+      "symbol": "TZNI",
+      "nameAr": "الخاتم للاتصالات",
+      "status": "review_required",
+      "officialHistoryRows": 63,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    },
+    {
+      "symbol": "TASC",
+      "nameAr": "اسيا سيل للاتصالات",
+      "status": "review_required",
+      "officialHistoryRows": 71,
+      "verifiedCurrentSessionBar": true,
+      "issues": "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED;TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION;CROSSED_ORDER_BOOK;ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED"
+    }
+  ],
+  "officialHistory": {
+    "securities": 48,
+    "rows": 1922,
+    "verifiedCurrentSessionBars": 22,
+    "source": "Iraqi Central Securities Depository daily regular-market bulletins",
+    "dateRange": [
+      "2026-06-22",
+      "2026-11-09"
+    ],
+    "bulletins": 72,
+    "reportsWithDates": 71,
+    "duplicatePairs": 0,
+    "ohlcIssues": 0
+  },
+  "statuses": {
+    "review_required": 105
+  },
+  "issueCounts": {
+    "TECHNICAL_LEVELS_NOT_VERIFIED_FOR_CURRENT_SESSION": 105,
+    "DIRECTORY_RECONCILIATION_REVIEW_REQUIRED": 27,
+    "CROSSED_ORDER_BOOK": 24,
+    "ORDER_BOOK_SOURCE_TIMESTAMP_NOT_VERIFIED": 27,
+    "CURRENT_PRICE_OUTSIDE_SESSION_RANGE": 7,
+    "HISTORICAL_SOURCE_NOT_VERIFIED": 9,
+    "DUPLICATE_DATES": 9,
+    "INCOMPLETE_OHLCV_ROWS": 4
+  },
+  "policy": [
+    "Legacy historicalPrices are not merged with official CSD series.",
+    "Official CSD series are eligible for charts only after provenance and row validation.",
+    "Official current-session OHLC is used only when the CSD session date matches marketSessionDate and CSD close matches currentPrice.",
+    "No stale technical levels, financial ratios, order-book timestamps, or prices were fabricated.",
+    "Recommendations remain disabled until current-session technical provenance and other blocking quality issues are resolved."
+  ]
+}

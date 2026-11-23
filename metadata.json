@@ -1,0 +1,11 @@
+{
+  "name": "نينورتا برو | محطة التوصيات والتحليل المالي - سوق العراق (ISX Pro)",
+  "description": "منصة محلية لمتابعة سوق العراق للأوراق المالية: بيانات نهاية الجلسة من IQWealth، تاريخ رسمي من مركز الإيداع، التحليل الفني والمالي، المحفظة، كشف الحساب وOCR وحاسبات المستثمر.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "LOCAL_MARKET_DATA",
+    "OFFICIAL_CSD_HISTORY",
+    "PORTFOLIO_AND_RISK_TOOLS",
+    "LOCAL_ACCOUNT_STATEMENT_OCR"
+  ]
+}
